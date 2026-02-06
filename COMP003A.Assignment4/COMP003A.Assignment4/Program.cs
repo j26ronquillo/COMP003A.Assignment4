@@ -14,14 +14,14 @@ namespace COMP003A.Assignment4
             int stepNumber = 0;
             /* Loops exist because it helps the programmer help with continuous displays instead of them having to copy mutliple blocks.
              It also executes a block of code repeatly until a specific condition is met.*/
-            while (option == false) 
+            while (option == false) //the while command before the"enter choice: " menu repeats and loops instead where putting it before the command it must be written continuously.
             {
                 Console.Write("Enter Choice: ");
                 int userInput = int.Parse(Console.ReadLine());
                 if (userInput == 1)
                 {
                     if (currentNumber == 3) { Console.WriteLine("Step 3 is restricted and was skipped.\n"); stepNumber++; currentNumber++; continue; }
-                    if (currentNumber == 5) { Console.WriteLine("Safety limit reach. Routine stopped.\n"); continue; }
+                    if (currentNumber == 5) { Console.WriteLine("Safety limit reach. Routine stopped.\n"); continue; } //using continue here makes sure that the next line is skipped and moves on to the next iteration.
                     Console.WriteLine($"Routine {currentNumber} complete.\n"); stepNumber++; currentNumber++;
                 }
 
@@ -29,7 +29,7 @@ namespace COMP003A.Assignment4
                 { Console.WriteLine($"Current progress: {stepNumber} steps completed.\n"); }
 
                 else if (userInput == 3)
-                { Console.WriteLine("Program ended."); break; }
+                { Console.WriteLine("Program ended."); break; } //break makes the user exit from the program cleanly avoiding errors.
              /* Loops skip steps or blocks because of control flow statements like using continue or break. If the condition for the value is not true to begin with,
               * the program would never start. Managing control flow in loop statements must be watched carefully as it can accidently lead to infinite loops if not used.*/
             
