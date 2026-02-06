@@ -19,6 +19,7 @@ namespace COMP003A.Assignment4
 				if (userInput == 1)
                 {
 					if (currentNumber == 3) { Console.WriteLine("Step 3 is restricted and was skipped.\n"); stepNumber++; currentNumber++; continue; }
+					if (currentNumber == 5) { Console.WriteLine("Safety limit reach. Routine stopped.\n"); continue; }
 					Console.WriteLine($"Routine {currentNumber} complete.\n"); stepNumber++; currentNumber++;}
                 else if (userInput == 2)
                 { Console.WriteLine($"Current progress: {stepNumber} steps completed.\n"); }
