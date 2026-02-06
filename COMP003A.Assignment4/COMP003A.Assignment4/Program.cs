@@ -12,27 +12,20 @@ namespace COMP003A.Assignment4
             bool option = false;
             int currentNumber = 1;
             int stepNumber = 0;
-           
+
             while (option == false)
             { Console.Write("Enter Choice: ");
-            int userInput = int.Parse(Console.ReadLine());
-                if (userInput == 1) 
-                { Console.WriteLine($"Routine {currentNumber} complete.\n"); stepNumber++; currentNumber++; }
-                if (userInput == 2) 
-				{ Console.WriteLine($"Current progress: {stepNumber} steps completed.\n"); }
-                if (userInput == 3) 
-				{ Console.WriteLine("Program ended."); option = true; }
-               
-			}
+                int userInput = int.Parse(Console.ReadLine());
+				if (userInput == 1)
+                {
+					if (currentNumber == 3) { Console.WriteLine("Step 3 is restricted and was skipped.\n"); stepNumber++; currentNumber++; continue; }
+					Console.WriteLine($"Routine {currentNumber} complete.\n"); stepNumber++; currentNumber++;}
+                else if (userInput == 2)
+                { Console.WriteLine($"Current progress: {stepNumber} steps completed.\n"); }
+                else if (userInput == 3)
+                { Console.WriteLine("Program ended."); option = true; }
 
-
-
-
-
-
-
-
-
+            }
         }
     }
 }
